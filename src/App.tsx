@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import { StatusBar } from 'expo-status-bar';
 
@@ -15,6 +15,7 @@ import {
 import { DMSans_400Regular } from "@expo-google-fonts/dm-sans";
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 import theme from "../src/styles/theme";
+import { Login } from './screens/login/login';
 
 const App = () => {
 	const [fontsLoaded] = useFonts({
@@ -34,9 +35,8 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<StatusBar style="dark" translucent backgroundColor="transparent" />
-			<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-
-				<Text style={{ fontSize: 20 }}>Wallet App!</Text>
+			<View>
+				<Login />
 			</View>
 		</ThemeProvider>
 	);
