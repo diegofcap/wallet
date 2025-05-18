@@ -9,4 +9,5 @@
 7. instalar fontes
    a. instalar as fontes do google: npx expo install expo-font @expo-google-fonts/inter
    b. instalar o gerenciador de fontes:
-8. criar os estilos
+8. criar os estilos com styled components
+9. configurar status bar

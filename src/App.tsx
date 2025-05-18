@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
+import { StatusBar } from 'expo-status-bar';
+
 import {
 	useFonts,
 	Poppins_300Light,
@@ -31,7 +33,9 @@ const App = () => {
 
 	return (
 		<ThemeProvider theme={theme}>
+			<StatusBar style="dark" translucent backgroundColor="transparent" />
 			<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+
 				<Text style={{ fontSize: 20 }}>Wallet App!</Text>
 			</View>
 		</ThemeProvider>
