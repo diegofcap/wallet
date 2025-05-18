@@ -6,3 +6,6 @@
 4. Instalar o expo-client-dev: npx expo install expo-dev-client
 5. Compilar o projeto: npx expo run:android
 6. Configurar o babel
+7. instalar fontes
+   a. instalar as fontes do google: npx expo install expo-font @expo-google-fonts/inter
+   b. instalar o gerenciador de fontes:
