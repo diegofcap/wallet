@@ -1,4 +1,4 @@
-package com.wallet
+package com.diegoferreira83.wallet
 
 import android.app.Application
 import android.content.res.Configuration

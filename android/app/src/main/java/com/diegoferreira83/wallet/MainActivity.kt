@@ -1,4 +1,4 @@
-package com.wallet
+package com.diegoferreira83.wallet
 
 import android.os.Build
 import android.os.Bundle
