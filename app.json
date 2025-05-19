@@ -1,33 +1,41 @@
 {
-  "expo": {
-    "name": "wallet",
-    "slug": "wallet",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
-      "package": "com.diegoferreira83.wallet"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      "expo-font"
-    ]
-  }
+	"expo": {
+		"name": "wallet",
+		"slug": "wallet",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/icon_512x512.png",
+		"scheme": "wallet",
+		"userInterfaceStyle": "light",
+		"newArchEnabled": true,
+		"splash": {
+			"image": "./assets/splash_1242x2436.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#421b8f"
+		},
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.diegoferreira83.wallet",
+			"icon": "./assets/icon_512x512.png",
+			"buildNumber": "1.0.0",
+			"infoPlist": {
+				"UIBackgroundModes": ["fetch"],
+				"NSCameraUsageDescription": "Este aplicativo precisa acessar a c\u00e2mera.",
+				"NSPhotoLibraryUsageDescription": "Este aplicativo precisa acessar suas fotos para salvar recibos e comprovantes."
+			}
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive_432x432.png",
+				"backgroundColor": "#421b8f"
+			},
+			"edgeToEdgeEnabled": true,
+			"package": "com.diegoferreira83.wallet"
+		},
+		"web": {
+			"favicon": "./assets/favicon.png"
+		},
+		"plugins": ["expo-font"],
+		"assetBundlePatterns": ["**/*"]
+	}
 }
