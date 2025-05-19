@@ -1,9 +1,23 @@
 import type React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Container, ContentBody, ContentFooter, ContentHeader, Description, Title, ViewButton } from './styles';
 import { ButtonSocialGoogle } from '@src/components/ButtonSocialGoogle/ButtonSocialGoogle';
 import { ButtonSocial } from '@src/components/ButtonSocial/ButtonSocial';
-
+import Input from '@src/components/Input';
+import {
+	Container,
+	ContentHeader,
+	ContentBody,
+	ContentFooter,
+	Title,
+	Description,
+	ViewButton,
+	ButtonSignUp,
+	TitleButtonSignUp1,
+	TitleButtonSingUp2,
+	ContentForgotPassword,
+	ContentButtonForgotPassword,
+	ContentTitleForgotPassword,
+} from "./styles";
 
 const Login: React.FC = () => {
 	return (
@@ -17,7 +31,30 @@ const Login: React.FC = () => {
 						<ButtonSocial iconName="facebook" title="Facebook" />
 					</ViewButton>
 				</ContentHeader>
-				<ContentBody></ContentBody>
+				<ContentBody>
+					<Input
+						LeftIcon
+						iconSize={25}
+						autoCorrect={false}
+						autoCapitalize="none"
+						secureTextEntry={false}
+						iconName="mail-outline"
+						keyboardType="email-address"
+						placeholder="Digite seu e-mail"
+					/>
+					<Input
+						LeftIcon
+						RightIcon
+						iconSize={25}
+						secureTextEntry
+						autoCorrect={false}
+						autoCapitalize='none'
+						keyboardType="default"
+						iconName="lock-closed-outline"
+						placeholder="Digite sua senha"
+					/>
+
+				</ContentBody>
 				<ContentFooter></ContentFooter>
 			</Container>
 		</SafeAreaView>
