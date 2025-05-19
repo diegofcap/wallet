@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 import { StatusBar } from 'expo-status-bar';
 
@@ -14,8 +14,11 @@ import {
 
 import { DMSans_400Regular } from "@expo-google-fonts/dm-sans";
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
-import theme from "../src/styles/theme";
+
 import { Login } from './screens/login/login';
+import theme from '../src/styles/theme';
+
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const App = () => {
 	const [fontsLoaded] = useFonts({
@@ -29,16 +32,16 @@ const App = () => {
 	});
 
 	if (!fontsLoaded) {
-		return <ActivityIndicator />;
+		return <ActivityIndicator size="large" style={{ flex: 1 }} />;
 	}
 
 	return (
-		<ThemeProvider theme={theme}>
-			<StatusBar style="dark" translucent backgroundColor="transparent" />
-			<View>
+		<GestureHandlerRootView style={{ flex: 1 }}>
+			<ThemeProvider theme={theme}>
+				<StatusBar style="dark" translucent backgroundColor="transparent" />
 				<Login />
-			</View>
-		</ThemeProvider>
+			</ThemeProvider>
+		</GestureHandlerRootView>
 	);
 }
 
