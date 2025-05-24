@@ -1,7 +1,6 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { useTheme } from 'styled-components/native';
-import { useNavigation } from '@react-navigation/native';
 import {
 	User,
 	CaretRight,
@@ -43,8 +42,6 @@ export const Profile = ({
 	onPress,
 }: IProfile) => {
 	const { COLORS } = useTheme();
-
-	const navigation = useNavigation();
 
 	return (
 		<Container>

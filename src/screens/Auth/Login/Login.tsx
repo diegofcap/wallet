@@ -1,4 +1,4 @@
-import type React from 'react';
+import React, { useState } from 'react';
 import { KeyboardAvoidingView, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { ButtonSocialGoogle } from '@src/components/ButtonSocialGoogle/ButtonSocialGoogle';
@@ -21,8 +21,12 @@ import {
 } from "./styles";
 import { ButtonPersonalizado } from '@src/components/ButtonPersonalizado';
 
+
 const Login: React.FC = () => {
-	const navigation = useNavigation()
+	const [loading, setLoading] = useState(false);
+	const navigation = useNavigation();
+
+
 
 	const handleCadastro = () => {
 		navigation.navigate('Cadastro');
@@ -33,11 +37,12 @@ const Login: React.FC = () => {
 	}
 
 	return (
-		<KeyboardAvoidingView
-			behavior="position"
-			enabled
-		>
-			<Container>
+		// <KeyboardAvoidingView
+		//     behavior="position"
+		//     enabled
+		// >
+		<Container>
+			<ScrollView showsVerticalScrollIndicator={false}>
 				<ContentHeader>
 					<Title> Seja bem vindo(a) {"\n"} a App Carteira</Title>
 					<Description>Entrar com rede sociais</Description>
@@ -79,15 +84,18 @@ const Login: React.FC = () => {
 						onPress={() => { }}
 						style={{ marginBottom: 20 }}
 					/>
+
+
+					<ContentFooter>
+						<ButtonSignUp onPress={handleCadastro}>
+							<TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
+							<TitleButtonSingUp2>Cadastre-se</TitleButtonSingUp2>
+						</ButtonSignUp>
+					</ContentFooter>
 				</ContentBody>
-				<ContentFooter>
-					<ButtonSignUp onPress={handleCadastro}>
-						<TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
-						<TitleButtonSingUp2>Cadastre-se</TitleButtonSingUp2>
-					</ButtonSignUp>
-				</ContentFooter>
-			</Container>
-		</KeyboardAvoidingView>
+			</ScrollView>
+		</Container>
+		// </KeyboardAvoidingView>
 	);
 }
 export { Login };
