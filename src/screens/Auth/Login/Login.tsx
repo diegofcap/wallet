@@ -1,5 +1,6 @@
 import type React from 'react';
-import { SafeAreaView } from 'react-native';
+import { KeyboardAvoidingView, ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { ButtonSocialGoogle } from '@src/components/ButtonSocialGoogle/ButtonSocialGoogle';
 import { ButtonSocial } from '@src/components/ButtonSocial/ButtonSocial';
 import Input from '@src/components/Input';
@@ -21,8 +22,21 @@ import {
 import { ButtonPersonalizado } from '@src/components/ButtonPersonalizado';
 
 const Login: React.FC = () => {
+	const navigation = useNavigation()
+
+	const handleCadastro = () => {
+		navigation.navigate('Cadastro');
+	}
+
+	const handleRecuperarSenha = () => {
+		navigation.navigate('RecuperarSenha');
+	}
+
 	return (
-		<SafeAreaView>
+		<KeyboardAvoidingView
+			behavior="position"
+			enabled
+		>
 			<Container>
 				<ContentHeader>
 					<Title> Seja bem vindo(a) {"\n"} a App Carteira</Title>
@@ -54,6 +68,11 @@ const Login: React.FC = () => {
 						iconName="lock-closed-outline"
 						placeholder="Digite sua senha"
 					/>
+					<ContentForgotPassword>
+						<ContentButtonForgotPassword onPress={handleRecuperarSenha}>
+							<ContentTitleForgotPassword>Recuperar Senha</ContentTitleForgotPassword>
+						</ContentButtonForgotPassword>
+					</ContentForgotPassword>
 					<ButtonPersonalizado
 						title="Entrar"
 						variant="primary"
@@ -61,9 +80,14 @@ const Login: React.FC = () => {
 						style={{ marginBottom: 20 }}
 					/>
 				</ContentBody>
-				<ContentFooter></ContentFooter>
+				<ContentFooter>
+					<ButtonSignUp onPress={handleCadastro}>
+						<TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
+						<TitleButtonSingUp2>Cadastre-se</TitleButtonSingUp2>
+					</ButtonSignUp>
+				</ContentFooter>
 			</Container>
-		</SafeAreaView>
+		</KeyboardAvoidingView>
 	);
 }
 export { Login };

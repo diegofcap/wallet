@@ -1,7 +1,9 @@
-import React from 'react';
-import { ActivityIndicator } from 'react-native';
-import { ThemeProvider } from 'styled-components/native';
-import { StatusBar } from 'expo-status-bar';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { ThemeProvider } from "styled-components/native";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { View, ActivityIndicator, Text } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
 
 import {
 	useFonts,
@@ -15,10 +17,8 @@ import {
 import { DMSans_400Regular } from "@expo-google-fonts/dm-sans";
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 
-import { Login } from './screens/login/login';
-import theme from '../src/styles/theme';
-
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import theme from "../src/styles/theme";
+import { Routes } from './routes'
 
 const App = () => {
 	const [fontsLoaded] = useFonts({
@@ -38,8 +38,17 @@ const App = () => {
 	return (
 		<GestureHandlerRootView style={{ flex: 1 }}>
 			<ThemeProvider theme={theme}>
-				<StatusBar style="dark" translucent backgroundColor="transparent" />
-				<Login />
+				<NavigationContainer>
+					<StatusBar style="dark" translucent backgroundColor="transparent" />
+					<View
+						style={{
+							flex: 1,
+							backgroundColor: theme.COLORS.WHITE_100,
+						}}
+					>
+						<Routes />
+					</View>
+				</NavigationContainer>
 			</ThemeProvider>
 		</GestureHandlerRootView>
 	);
