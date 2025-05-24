@@ -16,6 +16,8 @@ export const ContentBody = styled.View``;
 
 export const ViewButton = styled.View`
     flex-direction: row;
+	padding-right: ${RFValue(50)}px;
+	padding-left: ${RFValue(50)}px;
 `;
 
 export const Title = styled.Text`

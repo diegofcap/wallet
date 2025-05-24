@@ -18,6 +18,7 @@ import {
 	ContentButtonForgotPassword,
 	ContentTitleForgotPassword,
 } from "./styles";
+import { ButtonPersonalizado } from '@src/components/ButtonPersonalizado';
 
 const Login: React.FC = () => {
 	return (
@@ -53,7 +54,12 @@ const Login: React.FC = () => {
 						iconName="lock-closed-outline"
 						placeholder="Digite sua senha"
 					/>
-
+					<ButtonPersonalizado
+						title="Entrar"
+						variant="primary"
+						onPress={() => { }}
+						style={{ marginBottom: 20 }}
+					/>
 				</ContentBody>
 				<ContentFooter></ContentFooter>
 			</Container>
