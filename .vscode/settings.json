@@ -1,0 +1,17 @@
+{
+	"colorize.languages": [
+		"css",
+		"scss",
+		"sass",
+		"less",
+		"stylus",
+		"xml",
+		"svg",
+		"html",
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact"
+	],
+	"colorize.colorized_color_background": true
+}
