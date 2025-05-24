@@ -17,16 +17,17 @@ export const TabRoutes = () => {
 			initialRouteName='Carteira'
 			screenOptions={{
 				headerShown: false,
-				tabBarShowLabel: true,
+				tabBarShowLabel: false,
 				tabBarInactiveTintColor: theme.COLORS.GRAY4,
 				tabBarActiveTintColor: theme.COLORS.GRAY1,
 				tabBarStyle: {
 					paddingBottom: 7,
-					backgroundColor: theme.COLORS.GRAY6,
+					backgroundColor: theme.COLORS.PURPLEDARK3,
+					borderRadius: 30,
 				},
 				tabBarLabelStyle: {
 					fontSize: 11,
-					color: theme.COLORS.GRAY3,
+					color: theme.COLORS.WHITE,
 				}
 			}}
 		>
@@ -38,7 +39,7 @@ export const TabRoutes = () => {
 					tabBarIcon: ({ focused }) => (
 						<View
 							style={{
-								marginTop: 5,
+								marginTop: 25,
 								alignItems: 'center',
 								justifyContent: 'center',
 							}}
@@ -47,13 +48,13 @@ export const TabRoutes = () => {
 								<CreditCard
 									size={25}
 									weight="fill"
-									color={focused ? theme.COLORS.GRAY1 : theme.COLORS.GRAY3}
+									color={theme.COLORS.WHITE}
 								/>
 							) : (
 								<CreditCard
 									size={25}
 									weight="light"
-									color={focused ? theme.COLORS.GRAY1 : theme.COLORS.GRAY3}
+									color={theme.COLORS.WHITE}
 								/>
 							)}
 						</View>
@@ -68,7 +69,7 @@ export const TabRoutes = () => {
 					tabBarIcon: ({ focused }) => (
 						<View
 							style={{
-								marginTop: 5,
+								marginTop: 25,
 								alignItems: 'center',
 								justifyContent: 'center',
 							}}
@@ -77,13 +78,13 @@ export const TabRoutes = () => {
 								<ChartBar
 									size={25}
 									weight="fill"
-									color={focused ? theme.COLORS.GRAY1 : theme.COLORS.GRAY3}
+									color={theme.COLORS.WHITE}
 								/>
 							) : (
 								<ChartBar
 									size={25}
 									weight="light"
-									color={focused ? theme.COLORS.GRAY1 : theme.COLORS.GRAY3}
+									color={theme.COLORS.WHITE}
 								/>
 							)}
 						</View>
@@ -98,7 +99,7 @@ export const TabRoutes = () => {
 					tabBarIcon: ({ focused }) => (
 						<View
 							style={{
-								marginTop: 5,
+								marginTop: 25,
 								alignItems: 'center',
 								justifyContent: 'center',
 							}}
@@ -107,13 +108,13 @@ export const TabRoutes = () => {
 								<Bell
 									size={25}
 									weight="fill"
-									color={focused ? theme.COLORS.GRAY1 : theme.COLORS.GRAY3}
+									color={theme.COLORS.WHITE}
 								/>
 							) : (
 								<Bell
 									size={25}
 									weight="light"
-									color={focused ? theme.COLORS.GRAY1 : theme.COLORS.GRAY3}
+									color={theme.COLORS.WHITE}
 								/>
 							)}
 						</View>
@@ -128,7 +129,7 @@ export const TabRoutes = () => {
 					tabBarIcon: ({ focused }) => (
 						<View
 							style={{
-								marginTop: 5,
+								marginTop: 25,
 								alignItems: 'center',
 								justifyContent: 'center',
 							}}
@@ -137,13 +138,13 @@ export const TabRoutes = () => {
 								<GearSix
 									size={25}
 									weight="fill"
-									color={focused ? theme.COLORS.GRAY1 : theme.COLORS.GRAY3}
+									color={theme.COLORS.WHITE}
 								/>
 							) : (
 								<GearSix
 									size={25}
 									weight="light"
-									color={focused ? theme.COLORS.GRAY1 : theme.COLORS.GRAY3}
+									color={theme.COLORS.WHITE}
 								/>
 							)}
 						</View>

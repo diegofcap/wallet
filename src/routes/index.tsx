@@ -6,6 +6,5 @@ import { AuthRoutes } from './auth.routes';
 export const Routes = () => {
 	const user = true;
 
-	// return user ? <AppRoutes /> : <AuthRoutes />;
-	return <AuthRoutes />;
+	return user ? <AppRoutes /> : <AuthRoutes />;
 }
