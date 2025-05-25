@@ -20,7 +20,7 @@
 			"buildNumber": "1.0.0",
 			"infoPlist": {
 				"UIBackgroundModes": ["fetch"],
-				"NSCameraUsageDescription": "Este aplicativo precisa acessar a c\u00e2mera.",
+				"NSCameraUsageDescription": "Este aplicativo precisa acessar a câmera.",
 				"NSPhotoLibraryUsageDescription": "Este aplicativo precisa acessar suas fotos para salvar recibos e comprovantes."
 			}
 		},
@@ -36,6 +36,13 @@
 			"favicon": "./assets/favicon.png"
 		},
 		"plugins": ["expo-font"],
-		"assetBundlePatterns": ["**/*"]
+		"assetBundlePatterns": ["**/*"],
+		"extra": {
+			"eas": {
+				"projectId": "46e0af8b-4e0c-4362-b672-d70b33ea3b23"
+			}
+		},
+		"owner": "diegoferreira83"
 	}
 }
+
