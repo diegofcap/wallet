@@ -1,12 +1,58 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React from 'react'
+import { FlatList } from 'react-native';
+import { CaretDoubleLeft } from 'phosphor-react-native';
+import { useNavigation } from '@react-navigation/native';
+
+import { Header } from '@src/components/Header';
+import { transaction } from '@src/utils/transaction';
+import {
+	Container,
+	ContentFlat,
+	IconTransaction,
+	DetailsTransaction,
+	NameTransaction,
+	SubtTitleTransaction,
+	AmountTransaction,
+	ButtonGoBack,
+} from './styles';
 
 export const Transaction = () => {
+	const navigation = useNavigation();
+
+	const handleGoBackHome = () => {
+		navigation.goBack()
+	}
+
 	return (
-		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }
-		}>
-			<Text style={{ fontSize: 24, fontWeight: 'bold' }}> Settings Screen </Text>
-			< Text style={{ fontSize: 16, color: 'gray' }}> This is the settings screen.</Text>
-		</View>
+		<>
+			<Header
+				iconLeft
+				typeTransaction
+				appName="Minhas Transações"
+			/>
+			<Container>
+				<FlatList
+					data={transaction}
+					renderItem={({ item }) => (
+						<ContentFlat>
+							<IconTransaction
+								source={item.icon}
+							/>
+
+							<DetailsTransaction>
+								<NameTransaction>{item.title}</NameTransaction>
+								<SubtTitleTransaction>{item.subtitle}</SubtTitleTransaction>
+							</DetailsTransaction>
+
+							<AmountTransaction>R$ {item.amount}</AmountTransaction>
+						</ContentFlat>
+					)}
+					showsVerticalScrollIndicator={false}
+				/>
+				<ButtonGoBack onPress={handleGoBackHome}>
+					<CaretDoubleLeft size={32} weight="light" />
+				</ButtonGoBack>
+			</Container>
+		</>
 	)
 }

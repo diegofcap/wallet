@@ -47,6 +47,10 @@ import {
 export const Carteira = () => {
 	const navigation = useNavigation();
 
+	const hadleGoTransaction = () => {
+		navigation.navigate('Transaction')
+	}
+
 	return (
 		<Container>
 			<Header
@@ -71,7 +75,6 @@ export const Carteira = () => {
 
 				<Body>
 					<TouchableOpacity
-						onPress={() => navigation.navigate('Transaction')}
 						style={{ alignItems: 'center' }}>
 						<IconTransfer source={Transfer} />
 						<TitleTransfer>Transf.</TitleTransfer>
@@ -99,17 +102,29 @@ export const Carteira = () => {
 			<Footer>
 				<FlatList
 					data={limited_transaction}
-					keyExtractor={(item) => item.id}
 					renderItem={({ item }) => (
 						<ContentFlat>
-							<IconTransaction source={item.icon} />
+							<IconTransaction
+								source={item.icon}
+							/>
+
 							<DetailsTransaction>
 								<NameTransaction>{item.title}</NameTransaction>
 								<SubtTitleTransaction>{item.subtitle}</SubtTitleTransaction>
 							</DetailsTransaction>
-							<AmountTransaction>{item.amount}</AmountTransaction>
+
+							<AmountTransaction>R$ {item.amount}</AmountTransaction>
 						</ContentFlat>
 					)}
+					ListHeaderComponent={
+						<ContentFlatHeader>
+							<Title>Minhas Transações</Title>
+							<ButtonVerTotos onPress={hadleGoTransaction}>
+								<ButtonTitleVertotos>Ver Todos</ButtonTitleVertotos>
+							</ButtonVerTotos>
+						</ContentFlatHeader>
+					}
+					showsVerticalScrollIndicator={false}
 				/>
 			</Footer>
 		</Container>
