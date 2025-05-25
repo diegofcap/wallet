@@ -47,10 +47,6 @@ import {
 export const Carteira = () => {
 	const navigation = useNavigation();
 
-	const hadleGoTransaction = () => {
-		navigation.navigate('Transaction')
-	}
-
 	return (
 		<Container>
 			<Header
@@ -74,7 +70,9 @@ export const Carteira = () => {
 				</CardInfo>
 
 				<Body>
-					<TouchableOpacity style={{ alignItems: 'center' }}>
+					<TouchableOpacity
+						onPress={() => navigation.navigate('Transaction')}
+						style={{ alignItems: 'center' }}>
 						<IconTransfer source={Transfer} />
 						<TitleTransfer>Transf.</TitleTransfer>
 					</TouchableOpacity>
@@ -82,7 +80,9 @@ export const Carteira = () => {
 						<IconPayment source={Payments} />
 						<TitlePayments>Forma Pagto</TitlePayments>
 					</TouchableOpacity>
-					<TouchableOpacity style={{ alignItems: 'center' }}>
+					<TouchableOpacity
+						onPress={() => navigation.navigate('Transaction')}
+						style={{ alignItems: 'center' }}>
 						<IconPayOut source={PayOut} />
 						<TitlePayOut>Pagtos</TitlePayOut>
 					</TouchableOpacity>
